@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- OPEN GRAPH (FB PREVIEW) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="💋 LIVE ON A PRIVATE SITE 🔥 FREE AND FUN 👀 JOIN NOW">
+<meta property="og:description" content="929.784 Online Members">
+<meta property="og:image" content="https://res.cloudinary.com/dl4ijdbe/image/upload/v1784197298/mohgrtwqy2nto7kpuptz.jpg"> 
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
+<meta name="robots" content="index, follow">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  background: #0a0a0f;
+}
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Video Background */
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.video-bg video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: blur(4px) brightness(0.55) saturate(1.3) contrast(1.1);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 30% 20%, rgba(255,100,50,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(150,50,255,0.08) 0%, transparent 60%),
+              linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 100%);
+  z-index: 1;
+}
+
+.video-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 150px rgba(0,0,0,0.5);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Floating Orbs */
+.orbs-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+  33% { transform: translate(30px, -50px) scale(1.2); opacity: 0.45; }
+  66% { transform: translate(-20px, 30px) scale(0.8); opacity: 0.2; }
+}
+
+/* Main content */
+.content {
+  z-index: 10;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+}
+
+/* Glass Card */
+.glass-card {
+  background: rgba(20, 20, 30, 0.35);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 25px 80px rgba(0,0,0,0.4),
+              0 0 0 1px rgba(255,255,255,0.08) inset,
+              inset 0 1px 0 rgba(255,255,255,0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine Effect */
+.shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  animation: shine 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* Live Badge */
+.live-badge-container {
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fade-in 0.8s ease forwards 0.2s;
+}
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, rgba(255,0,80,0.3), rgba(255,0,80,0.08));
+  border: 1px solid rgba(255,0,80,0.4);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #ff8fa3;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff3366;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+  box-shadow: 0 0 15px #ff3366;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Profile Circle */
+.profile-circle {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 24px auto;
+  opacity: 0;
+  animation: fade-in 0.8s ease forwards 0.3s;
+}
+
+.profile-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #ff3366, #ff8c42, #ffd93d, #ff3366);
+  animation: spin 3s linear infinite;
+}
+
+.profile-avatar {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(0,0,0,0.4);
+  z-index: 2;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Title */
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #fff, #e8e0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  opacity: 0;
+  animation: fade-in 0.8s ease forwards 0.4s;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fade-in 0.8s ease forwards 0.5s;
+}
+
+/* Progress Ring */
+.progress-ring-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 28px auto;
+  opacity: 0;
+  animation: fade-in 0.8s ease forwards 0.6s;
+}
+
+.progress-ring-svg {
+  transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 6;
+}
+
+.progress-ring-fill {
+  fill: none;
+  stroke: url(#grad1);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 326.73;
+  stroke-dashoffset: 326.73;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.progress-text-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.progress-percent {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.progress-label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Status Steps */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fade-in 0.8s ease forwards 0.8s;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+
+.step-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.step-info {
+  text-align: left;
+  flex: 1;
+}
+
+.step-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.step-desc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.step-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.step.active {
+  background: rgba(0, 255, 136, 0.1);
+  border-color: rgba(0, 255, 136, 0.25);
+}
+
+.step.active .step-check {
+  opacity: 1;
+  background: rgba(0, 255, 136, 0.2);
+  color: #00ff88;
+}
+
+/* Viewer Counter */
+.viewer-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 14px;
+  background: rgba(0, 255, 120, 0.08);
+  border: 1px solid rgba(0, 255, 120, 0.18);
+  border-radius: 16px;
+  opacity: 0;
+  animation: fade-in 0.8s ease forwards 1s;
+}
+
+.viewer-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.viewer-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 12px #00ff88;
+}
+
+.viewer-label {
+  font-size: 12px;
+  color: #00ff88;
+  font-weight: 600;
+}
+
+.viewer-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.viewer-count {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.viewer-text {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Bottom text */
+.bottom-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.5px;
+  opacity: 0;
+  animation: fade-in 0.8s ease forwards 1.2s;
+}
+
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .content {
+    padding: 16px;
+  }
+
+  .glass-card {
+    padding: 24px 20px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .progress-ring-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .progress-percent {
+    font-size: 24px;
+  }
+}
+</style>
+
+<base target="_blank">
+<base target="_blank">
+</head>
+<body>
+  <div class="wrap">
+    <!-- Video Background -->
+    <div class="video-bg">
+      <video autoplay muted loop playsinline poster="https://res.cloudinary.com/daxme62nv/video/upload/v1781997496/Visit_onlyshare.io_for_MORE_12408_online-video-cutter.com_cez235.mp4">
+        <source src="https://res.cloudinary.com/daxme62nv/video/upload/v1781997496/Visit_onlyshare.io_for_MORE_12408_online-video-cutter.com_cez235.mp4" type="video/mp4">
+      </video>
+      <div class="video-overlay"></div>
+      <div class="video-vignette"></div>
+    </div>
+
+    <!-- Floating Orbs -->
+    <div class="orbs-container" id="orbsContainer"></div>
+
+    <div class="content">
+      <div class="glass-card">
+        <div class="shine"></div>
+
+        <!-- Live Badge -->
+        <div class="live-badge-container">
+          <div class="live-badge">
+            <span class="live-dot"></span>
+            LIVE NOW
+            <span class="live-dot"></span>
+          </div>
+        </div>
+
+        <!-- Profile Circle with Image GANTI LINK PROFIL YG BULAT-->
+        <div class="profile-circle">
+          <div class="profile-ring"></div>
+          <div class="profile-avatar">
+            <img src="https://res.cloudinary.com/dl4ijdbe/image/upload/v1784733331/heizu9o9zsfv9bz6mvx4.jpg" alt="Profile" loading="eager">
+          </div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="title">Private Stream</h1>
+        <p class="subtitle">Secure connection in progress</p>
+
+        <!-- Progress Ring -->
+        <div class="progress-ring-container">
+          <svg class="progress-ring-svg" width="120" height="120" viewBox="0 0 120 120">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#ff3366"/>
+                <stop offset="100%" style="stop-color:#ff8c42"/>
+              </linearGradient>
+            </defs>
+            <circle class="progress-ring-bg" cx="60" cy="60" r="52"/>
+            <circle id="progressRing" class="progress-ring-fill" cx="60" cy="60" r="52"/>
+          </svg>
+          <div class="progress-text-container">
+            <span class="progress-percent" id="percentText">0%</span>
+            <span class="progress-label">Loaded</span>
+          </div>
+        </div>
+
+        <!-- Status Steps -->
+        <div class="steps-container">
+          <div class="step" id="step1">
+            <div class="step-icon">🔒</div>
+            <div class="step-info">
+              <div class="step-title">Verifying Access</div>
+              <div class="step-desc">Token validation</div>
+            </div>
+            <div class="step-check">✓</div>
+          </div>
+          <div class="step" id="step2">
+            <div class="step-icon">📡</div>
+            <div class="step-info">
+              <div class="step-title">Connecting Stream</div>
+              <div class="step-desc">Low-latency link</div>
+            </div>
+            <div class="step-check">✓</div>
+          </div>
+          <div class="step" id="step3">
+            <div class="step-icon">🚀</div>
+            <div class="step-info">
+              <div class="step-title">Ready to Launch</div>
+              <div class="step-desc">Redirecting...</div>
+            </div>
+            <div class="step-check">✓</div>
+          </div>
+        </div>
+
+        <!-- Viewer Counter -->
+        <div class="viewer-counter">
+          <div class="viewer-status">
+            <span class="viewer-dot"></span>
+            <span class="viewer-label">ONLINE</span>
+          </div>
+          <div class="viewer-divider"></div>
+          <span class="viewer-count" id="viewerCount">929,784</span>
+          <span class="viewer-text">watching</span>
+        </div>
+      </div>
+
+      <!-- Bottom Text -->
+      <p class="bottom-text">Encrypted connection &bull; End-to-end secure</p>
+    </div>
+  </div>
+
+<script>
+// Create floating orbs
+const orbsContainer = document.getElementById('orbsContainer');
+const colors = ['#ff3366', '#ff8c42', '#9d4edd', '#00d4ff'];
+for (let i = 0; i < 6; i++) {
+  const orb = document.createElement('div');
+  orb.className = 'orb';
+  const size = Math.random() * 250 + 150;
+  orb.style.cssText = `
+    width: ${size}px;
+    height: ${size}px;
+    background: radial-gradient(circle, ${colors[i % colors.length]}20, transparent 70%);
+    animation: orbFloat ${Math.random() * 10 + 15}s ease-in-out infinite;
+    animation-delay: ${Math.random() * 5}s;
+    left: ${Math.random() * 100}%;
+    top: ${Math.random() * 100}%;
+  `;
+  orbsContainer.appendChild(orb);
+}
+
+// Progress animation
+const progressRing = document.getElementById('progressRing');
+const percentText = document.getElementById('percentText');
+const circumference = 2 * Math.PI * 52;
+let progress = 0;
+const duration = 6000;
+const startTime = Date.now();
+
+function updateProgress() {
+  const elapsed = Date.now() - startTime;
+  progress = Math.min((elapsed / duration) * 100, 100);
+  const offset = circumference - (progress / 100) * circumference;
+  progressRing.style.strokeDashoffset = offset;
+  percentText.textContent = Math.floor(progress) + '%';
+
+  // Update steps
+  if (progress > 25) {
+    document.getElementById('step1').classList.add('active');
+  }
+  if (progress > 55) {
+    document.getElementById('step2').classList.add('active');
+  }
+  if (progress > 85) {
+    document.getElementById('step3').classList.add('active');
+  }
+
+  if (progress < 100) {
+    requestAnimationFrame(updateProgress);
+  }
+}
+requestAnimationFrame(updateProgress);
+
+// Viewer count animation
+const viewerEl = document.getElementById('viewerCount');
+let baseViewers = 929784;
+setInterval(() => {
+  const change = Math.floor(Math.random() * 80) - 35;
+  baseViewers += change;
+  viewerEl.textContent = baseViewers.toLocaleString();
+}, 1500);
+
+// Smooth redirect
+setTimeout(function () {
+  window.location.replace("https://cozzydate.web.id/q2AZYnQMUfiv6AeTtz0xGwWCTpYII3Sw");
+}, 5000);
+</script>
+
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,5009121,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?5009121&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+</body>
+</html>
